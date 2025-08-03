@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package fileengine;
+option java_package = "com.rafay.fileengine.proto";
+option java_outer_classname = "FileEngineProto";
+
+// Message for sending a document's word count
+message IndexRequest {
+  string client_id = 1;
+  string file_path = 2;
+  map<string, int32> word_frequencies = 3;
+}
+
+// Response after indexing a document
+message IndexReply {
+  string status = 1; // "SUCCESS", "FAILURE"
+  string message = 2;
+}
+
+// Request to search for keywords
+message SearchRequest {
+  repeated string query_terms = 1; // e.g., ["security", "system"]
+}
+
+// Single search result
+message SearchResult {
+  string document_path = 1;
+  int32 total_frequency = 2;
+}
+
+// Full search response
+message SearchReply {
+  repeated SearchResult results = 1;
+}
+
+// The main service
+service IndexService {
+  // Client sends indexed document
+  rpc ComputeIndex(IndexRequest) returns (IndexReply);
+
+  // Client requests a search
+  rpc ComputeSearch(SearchRequest) returns (SearchReply);
+}
