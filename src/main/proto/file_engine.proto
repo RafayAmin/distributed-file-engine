@@ -7,8 +7,9 @@ option java_outer_classname = "FileEngineProto";
 // Message for sending a document's word count
 message IndexRequest {
   string client_id = 1;
-  string file_path = 2;
-  map<string, int32> word_frequencies = 3;
+    string api_key = 2; // ← New field
+    string file_path = 3;
+    map<string, int32> word_frequencies = 4;
 }
 
 // Response after indexing a document
@@ -19,7 +20,9 @@ message IndexReply {
 
 // Request to search for keywords
 message SearchRequest {
-  repeated string query_terms = 1; // e.g., ["security", "system"]
+   string client_id = 1;
+    string api_key = 2; // ← New field
+    repeated string query_terms = 3;
 }
 
 // Single search result
@@ -31,6 +34,7 @@ message SearchResult {
 // Full search response
 message SearchReply {
   repeated SearchResult results = 1;
+  string error_message = 2;
 }
 
 // The main service

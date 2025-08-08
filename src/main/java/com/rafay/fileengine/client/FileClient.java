@@ -5,6 +5,7 @@ import com.rafay.fileengine.proto.IndexServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,10 +26,9 @@ public class FileClient {
         channel.shutdown().awaitTermination(5, java.util.concurrent.TimeUnit.SECONDS);
     }
 
-    public void sendIndexRequest() {
+    public void sendIndexRequest(String clientId, String apiKey) { // Add apiKey parameter
         // Create a simple test document
         String docPath = "/test/document1.txt";
-        String clientId = "C1";
 
         // Simulate a word frequency map (e.g., from parsing a file)
         Map<String, Integer> wordFreqs = new HashMap<>();
@@ -40,6 +40,7 @@ public class FileClient {
         // Build the request
         FileEngineProto.IndexRequest request = FileEngineProto.IndexRequest.newBuilder()
                 .setClientId(clientId)
+                .setApiKey(apiKey) // ← Set the API key
                 .setFilePath(docPath)
                 .putAllWordFrequencies(wordFreqs)
                 .build();
@@ -49,29 +50,29 @@ public class FileClient {
         System.out.println("Index Reply: " + reply.getStatus() + " - " + reply.getMessage());
     }
 
-    public void sendSearchRequest() {
-        // Build a search request for the word "distributed"
+    public void sendSearchRequest(String clientId, String apiKey, String... terms) { // Add parameters
+        // Build the request
         FileEngineProto.SearchRequest request = FileEngineProto.SearchRequest.newBuilder()
-                .addQueryTerms("distributed")
-                .addQueryTerms("systems")
+                .setClientId(clientId)
+                .setApiKey(apiKey) // ← Set the API key
+                .addAllQueryTerms(Arrays.asList(terms))
                 .build();
 
         // Send the request and get the reply
         FileEngineProto.SearchReply reply = blockingStub.computeSearch(request);
-
-        // Print the results
-        System.out.println("Search Results for 'distributed systems':");
-        for (FileEngineProto.SearchResult result : reply.getResultsList()) {
-            System.out.println("  Found in: " + result.getDocumentPath() +
-                    " (Frequency: " + result.getTotalFrequency() + ")");
-        }
+        System.out.println("Search Results: " + reply.getResultsList());
     }
 
     public static void main(String[] args) throws InterruptedException {
         FileClient client = new FileClient("localhost", 8080);
+
+        // Use the same clientId and apiKey that the server knows
+        String clientId = "C1";
+        String apiKey = "your-generated-api-key"; // This should match what the server has
+
         try {
-            client.sendIndexRequest();  // First, index a document
-            client.sendSearchRequest(); // Then, search for it
+            client.sendIndexRequest(clientId, apiKey);
+            client.sendSearchRequest(clientId, apiKey, "distributed", "systems");
         } finally {
             client.shutdown();
         }

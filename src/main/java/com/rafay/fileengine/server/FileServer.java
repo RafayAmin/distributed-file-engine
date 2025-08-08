@@ -1,5 +1,6 @@
 package com.rafay.fileengine.server;
 
+import com.rafay.fileengine.auth.ClientManager;
 import com.rafay.fileengine.proto.FileEngineProto;
 import com.rafay.fileengine.proto.IndexServiceGrpc;
 import io.grpc.Server;
@@ -12,6 +13,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 public class FileServer extends IndexServiceGrpc.IndexServiceImplBase {
+
+    private final ClientManager clientManager = new ClientManager();
     private static final Logger logger = Logger.getLogger(FileServer.class.getName());
 
     // Global index: document path -> word -> frequency
@@ -46,15 +49,26 @@ public class FileServer extends IndexServiceGrpc.IndexServiceImplBase {
 
     @Override
     public void computeIndex(FileEngineProto.IndexRequest request, StreamObserver<FileEngineProto.IndexReply> responseObserver) {
-        // Store the index from the client
+        String clientId = request.getClientId();
+        String providedApiKey = request.getApiKey(); // ← Get the API key from the request
+
+        if (!clientManager.validateApiKey(clientId, providedApiKey)) {
+            FileEngineProto.IndexReply reply = FileEngineProto.IndexReply.newBuilder()
+                    .setStatus("ERROR")
+                    .setMessage("Invalid API Key")
+                    .build();
+            responseObserver.onNext(reply);
+            responseObserver.onCompleted();
+            return;
+        }
+
+        // If valid, proceed with indexing
         String docPath = request.getFilePath();
         Map<String, Integer> wordFreqs = request.getWordFrequenciesMap();
 
         globalIndex.put(docPath, wordFreqs);
+        logger.info("Indexed: " + docPath + " from client " + clientId);
 
-        logger.info("Indexed: " + docPath + " from client " + request.getClientId());
-
-        // Send a success reply
         FileEngineProto.IndexReply reply = FileEngineProto.IndexReply.newBuilder()
                 .setStatus("SUCCESS")
                 .setMessage("Document indexed successfully")
@@ -66,8 +80,21 @@ public class FileServer extends IndexServiceGrpc.IndexServiceImplBase {
 
     @Override
     public void computeSearch(FileEngineProto.SearchRequest request, StreamObserver<FileEngineProto.SearchReply> responseObserver) {
-        // Simple search: sum frequencies for each document
-        // In a real system, you'd rank results
+        String clientId = request.getClientId();
+        String providedApiKey = request.getApiKey(); // Get the API key from the request
+
+        // Validate the API key
+        if (!clientManager.validateApiKey(clientId, providedApiKey)) {
+            // Create a SearchReply with an error status
+            FileEngineProto.SearchReply errorReply = FileEngineProto.SearchReply.newBuilder()
+                    .setErrorMessage("Invalid API Key") // Use a dedicated field for errors
+                    .build();
+            responseObserver.onNext(errorReply);
+            responseObserver.onCompleted();
+            return;
+        }
+
+        // If valid, proceed with the search
         FileEngineProto.SearchReply.Builder replyBuilder = FileEngineProto.SearchReply.newBuilder();
 
         for (Map.Entry<String, Map<String, Integer>> docEntry : globalIndex.entrySet()) {
@@ -90,7 +117,14 @@ public class FileServer extends IndexServiceGrpc.IndexServiceImplBase {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         FileServer server = new FileServer();
-        int port = 8080; // Make configurable later
+
+        // Register a test client
+        String clientId = "C1";
+        String apiKey = server.clientManager.registerClient(clientId);
+        System.out.println("Registered Client ID: " + clientId);
+        System.out.println("API Key: " + apiKey); // In real use, this would be sent securely to the client
+
+        int port = 8080;
         server.start(port);
         server.blockUntilShutdown();
     }
