@@ -114,6 +114,22 @@ public class FileServer extends IndexServiceGrpc.IndexServiceImplBase {
         responseObserver.onNext(replyBuilder.build());
         responseObserver.onCompleted();
     }
+    @Override
+    public void registerClient(FileEngineProto.RegisterRequest request, StreamObserver<FileEngineProto.RegisterReply> responseObserver) {
+        String clientId = request.getClientId();
+        // Generate a new API key
+        String apiKey = clientManager.registerClient(clientId);
+
+        // Send the key back to the client
+        FileEngineProto.RegisterReply reply = FileEngineProto.RegisterReply.newBuilder()
+                .setApiKey(apiKey)
+                .setStatus("SUCCESS")
+                .setMessage("Client registered successfully")
+                .build();
+
+        responseObserver.onNext(reply);
+        responseObserver.onCompleted();
+    }
 
     public static void main(String[] args) throws IOException, InterruptedException {
         FileServer server = new FileServer();

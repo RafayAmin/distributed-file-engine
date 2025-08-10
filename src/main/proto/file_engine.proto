@@ -36,12 +36,25 @@ message SearchReply {
   repeated SearchResult results = 1;
   string error_message = 2;
 }
+// New messages for registration
+message RegisterRequest {
+    string client_id = 1;
+}
+
+message RegisterReply {
+    string api_key = 1;
+    string status = 2;
+    string message = 3;
+}
 
 // The main service
 service IndexService {
-  // Client sends indexed document
-  rpc ComputeIndex(IndexRequest) returns (IndexReply);
+    // Register a client to get an API key
+    rpc RegisterClient(RegisterRequest) returns (RegisterReply);
 
-  // Client requests a search
-  rpc ComputeSearch(SearchRequest) returns (SearchReply);
+    // Send indexed document
+    rpc ComputeIndex(IndexRequest) returns (IndexReply);
+
+    // Request a search
+    rpc ComputeSearch(SearchRequest) returns (SearchReply);
 }
