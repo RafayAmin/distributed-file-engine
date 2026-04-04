@@ -13,7 +13,7 @@
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <grpc.version>1.60.0</grpc.version>
+    <grpc.version>1.80.0</grpc.version>
     <protobuf.version>4.28.2</protobuf.version>
     <junit.version>5.10.0</junit.version>
   </properties>
