@@ -1,0 +1,56 @@
+Registered Client ID: DOCKER_TEST 
+API Key: WJwa6rTYubMVMt/EJLO7vA22wJWDCiAk+pkTwrTSFc0=
+Server listening on port: 9090
+00:54:12.466 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.logging.InternalLoggerFactory -- Using SLF4J as the default logging framework
+00:54:12.475 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- Java version: 21
+00:54:12.475 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- -Dio.netty.noUnsafe: false
+00:54:12.482 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- sun.misc.Unsafe.theUnsafe: available
+00:54:12.483 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- sun.misc.Unsafe base methods: all available
+00:54:12.483 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- sun.misc.Unsafe.storeFence: available
+00:54:12.485 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- java.nio.Buffer.address: available
+00:54:12.485 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- direct buffer constructor: unavailable: Reflective setAccessible(true) disabled
+00:54:12.486 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- java.nio.Bits.unaligned: available, true
+00:54:12.488 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable: class io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0$7 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @73846619
+00:54:12.490 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- java.nio.DirectByteBuffer.<init>(long, {int,long}): unavailable
+00:54:12.490 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- sun.misc.Unsafe: available
+00:54:12.491 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.tmpdir: C:\Users\rafay\AppData\Local\Temp (java.io.tmpdir)
+00:54:12.491 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.bitMode: 64 (sun.arch.data.model)
+00:54:12.493 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- Platform: Windows
+00:54:12.495 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.maxDirectMemory: -1 bytes
+00:54:12.495 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.uninitializedArrayAllocationThreshold: -1
+00:54:12.498 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.CleanerJava9 -- java.nio.ByteBuffer.cleaner(): available
+00:54:12.499 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.noPreferDirect: false
+00:54:12.768 [main] DEBUG io.grpc.netty.shaded.io.netty.channel.MultithreadEventLoopGroup -- -Dio.netty.eventLoopThreads: 24
+00:54:12.777 [main] DEBUG io.grpc.netty.shaded.io.netty.util.concurrent.GlobalEventExecutor -- -Dio.netty.globalEventExecutor.quietPeriodSeconds: 1
+00:54:12.786 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.InternalThreadLocalMap -- -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+00:54:12.786 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.InternalThreadLocalMap -- -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+00:54:12.793 [main] DEBUG io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop -- -Dio.netty.noKeySetOptimization: false
+00:54:12.793 [main] DEBUG io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop -- -Dio.netty.selectorAutoRebuildThreshold: 512
+00:54:12.798 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- org.jctools-core.MpscChunkedArrayQueue: available
+00:54:12.886 [main] DEBUG io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector -- -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+00:54:12.886 [main] DEBUG io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector -- -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.numHeapArenas: 24
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.numDirectArenas: 24
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.pageSize: 8192
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.maxOrder: 9
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.chunkSize: 4194304
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.smallCacheSize: 256
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.normalCacheSize: 64
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.cacheTrimInterval: 8192
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.useCacheForAllThreads: false
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+00:54:12.889 [main] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.disableCacheFinalizersForFastThreadLocalThreads: false
+00:54:12.944 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.channel.DefaultChannelId -- -Dio.netty.processId: 31428 (auto-detected)
+00:54:12.946 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.util.NetUtil -- -Djava.net.preferIPv4Stack: false
+00:54:12.947 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.util.NetUtil -- -Djava.net.preferIPv6Addresses: false
+00:54:12.955 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.util.NetUtilInitializations -- Loopback interface: loopback_0 (Software Loopback Interface 1, 0:0:0:0:0:0:0:1)
+00:54:12.956 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.util.NetUtil -- Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+00:54:12.959 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.channel.DefaultChannelId -- -Dio.netty.machineId: d4:5d:64:ff:fe:5e:43:10 (auto-detected)
+00:54:13.000 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.buffer.ByteBufUtil -- -Dio.netty.allocator.type: pooled
+00:54:13.000 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.buffer.ByteBufUtil -- -Dio.netty.threadLocalDirectBufferSize: 0
+00:54:13.000 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.buffer.ByteBufUtil -- -Dio.netty.maxThreadLocalCharBufferSize: 16384
+00:54:13.001 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.bootstrap.ChannelInitializerExtensions -- -Dio.netty.bootstrap.extensions: null
+Apr 06, 2026 12:54:13 AM com.rafay.fileengine.server.FileServer start
+INFO: Server started, listening on 9090

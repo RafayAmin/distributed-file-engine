@@ -1,0 +1,56 @@
+Registered Client ID: C1
+API Key: nf+QWGqSKZ8bhgbJ5QPf5kKy1uvknC6Rv2/Itb39lRk=
+00:33:19.326 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.logging.InternalLoggerFactory -- Using SLF4J as the default logging framework
+00:33:19.334 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- Java version: 21
+00:33:19.334 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- -Dio.netty.noUnsafe: false
+00:33:19.335 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- sun.misc.Unsafe.theUnsafe: available
+00:33:19.336 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- sun.misc.Unsafe base methods: all available
+00:33:19.337 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- sun.misc.Unsafe.storeFence: available
+00:33:19.347 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- java.nio.Buffer.address: available
+00:33:19.348 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- direct buffer constructor: unavailable: Reflective setAccessible(true) disabled
+00:33:19.349 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- java.nio.Bits.unaligned: available, true
+00:33:19.350 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable: class io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0$7 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @6f6c3158
+00:33:19.352 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent0 -- java.nio.DirectByteBuffer.<init>(long, {int,long}): unavailable
+00:33:19.352 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- sun.misc.Unsafe: available
+00:33:19.352 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.tmpdir: C:\Users\rafay\AppData\Local\Temp (java.io.tmpdir)
+00:33:19.352 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.bitMode: 64 (sun.arch.data.model)
+00:33:19.352 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- Platform: Windows
+00:33:19.353 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.maxDirectMemory: -1 bytes
+00:33:19.353 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.uninitializedArrayAllocationThreshold: -1
+00:33:19.355 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.CleanerJava9 -- java.nio.ByteBuffer.cleaner(): available
+00:33:19.355 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- -Dio.netty.noPreferDirect: false
+00:33:19.593 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.channel.MultithreadEventLoopGroup -- -Dio.netty.eventLoopThreads: 24
+00:33:19.606 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.concurrent.GlobalEventExecutor -- -Dio.netty.globalEventExecutor.quietPeriodSeconds: 1
+00:33:19.614 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.InternalThreadLocalMap -- -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+00:33:19.615 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.InternalThreadLocalMap -- -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+00:33:19.625 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop -- -Dio.netty.noKeySetOptimization: false
+00:33:19.625 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop -- -Dio.netty.selectorAutoRebuildThreshold: 512
+00:33:19.633 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.internal.PlatformDependent -- org.jctools-core.MpscChunkedArrayQueue: available
+00:33:19.704 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector -- -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+00:33:19.704 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector -- -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+00:33:19.706 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.numHeapArenas: 24
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.numDirectArenas: 24
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.pageSize: 8192
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.maxOrder: 9
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.chunkSize: 4194304
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.smallCacheSize: 256
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.normalCacheSize: 64
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.cacheTrimInterval: 8192
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.useCacheForAllThreads: false
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+00:33:19.707 [com.rafay.fileengine.server.FileServer.main()] DEBUG io.grpc.netty.shaded.io.netty.buffer.PooledByteBufAllocator -- -Dio.netty.allocator.disableCacheFinalizersForFastThreadLocalThreads: false
+00:33:19.765 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.channel.DefaultChannelId -- -Dio.netty.processId: 30188 (auto-detected)
+00:33:19.768 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.util.NetUtil -- -Djava.net.preferIPv4Stack: false
+00:33:19.768 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.util.NetUtil -- -Djava.net.preferIPv6Addresses: false
+00:33:19.778 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.util.NetUtilInitializations -- Loopback interface: loopback_0 (Software Loopback Interface 1, 0:0:0:0:0:0:0:1)
+00:33:19.779 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.util.NetUtil -- Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+00:33:19.783 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.channel.DefaultChannelId -- -Dio.netty.machineId: d4:5d:64:ff:fe:5e:43:10 (auto-detected)
+00:33:19.810 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.buffer.ByteBufUtil -- -Dio.netty.allocator.type: pooled
+00:33:19.810 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.buffer.ByteBufUtil -- -Dio.netty.threadLocalDirectBufferSize: 0
+00:33:19.810 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.buffer.ByteBufUtil -- -Dio.netty.maxThreadLocalCharBufferSize: 16384
+00:33:19.812 [grpc-nio-boss-ELG-1-1] DEBUG io.grpc.netty.shaded.io.netty.bootstrap.ChannelInitializerExtensions -- -Dio.netty.bootstrap.extensions: null
+Apr 06, 2026 12:33:19 AM com.rafay.fileengine.server.FileServer start
+INFO: Server started, listening on 8080
+^C

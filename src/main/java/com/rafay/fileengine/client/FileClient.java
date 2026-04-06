@@ -13,6 +13,7 @@ public class FileClient {
     private final ManagedChannel channel;
     private final IndexServiceGrpc.IndexServiceBlockingStub blockingStub;
     private String apiKey; // Store the API key
+    private String clientId; // Store the client ID
 
     public FileClient(String host, int port) {
         this.channel = ManagedChannelBuilder.forAddress(host, port)
@@ -21,8 +22,19 @@ public class FileClient {
         this.blockingStub = IndexServiceGrpc.newBlockingStub(channel);
     }
 
+    // Constructor that uses environment variables for host and port
+    public FileClient() {
+        String host = System.getenv().getOrDefault("SERVER_HOST", "localhost");
+        int port = Integer.parseInt(System.getenv().getOrDefault("SERVER_PORT", "8080").trim());
+        this.channel = ManagedChannelBuilder.forAddress(host, port)
+                .usePlaintext()
+                .build();
+        this.blockingStub = IndexServiceGrpc.newBlockingStub(channel);
+    }
+
     // Method to register with the server and get an API key
     public void registerWithServer(String clientId) {
+        this.clientId = clientId;
         FileEngineProto.RegisterRequest request = FileEngineProto.RegisterRequest.newBuilder()
                 .setClientId(clientId)
                 .build();
@@ -40,7 +52,7 @@ public class FileClient {
     // Corrected method: Takes a file path and a word frequency map
     public void sendIndexRequest(String filePath, Map<String, Integer> wordFreqs) {
         FileEngineProto.IndexRequest request = FileEngineProto.IndexRequest.newBuilder()
-                .setClientId("C1")
+                .setClientId(this.clientId)
                 .setApiKey(this.apiKey) // Use the stored key
                 .setFilePath(filePath) // Use 'filePath' parameter
                 .putAllWordFrequencies(wordFreqs) // Use 'wordFreqs' parameter
@@ -53,7 +65,7 @@ public class FileClient {
     // Corrected method: Takes search terms
     public void sendSearchRequest(String... terms) {
         FileEngineProto.SearchRequest request = FileEngineProto.SearchRequest.newBuilder()
-                .setClientId("C1")
+                .setClientId(this.clientId)
                 .setApiKey(this.apiKey) // Use the stored key
                 .addAllQueryTerms(java.util.Arrays.asList(terms))
                 .build();
@@ -67,10 +79,12 @@ public class FileClient {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        FileClient client = new FileClient("localhost", 8080);
+        FileClient client = new FileClient();
         try {
+            // Get client ID from environment variable, default to "C1"
+            String clientId = System.getenv().getOrDefault("CLIENT_ID", "C1");
             // Register first to get the API key
-            client.registerWithServer("C1");
+            client.registerWithServer(clientId);
 
             // Create a word frequency map for a document
             Map<String, Integer> wordFreqs = new HashMap<>();

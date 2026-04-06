@@ -16,6 +16,7 @@
     <grpc.version>1.80.0</grpc.version>
     <protobuf.version>4.28.2</protobuf.version>
     <junit.version>5.10.0</junit.version>
+    <exec.mainClass>com.rafay.fileengine.server.FileServer</exec.mainClass>
   </properties>
 
   <dependencies>
@@ -130,10 +131,9 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.1.0</version>
         <configuration>
-          <mainClass>com.rafay.fileengine.server.FileServer</mainClass>
+          <mainClass>${exec.mainClass}</mainClass>
         </configuration>
       </plugin>
-
       <!-- Build Fat JAR (Optional later) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -148,7 +148,7 @@
             <configuration>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.rafay.fileengine.Main</mainClass>
+                  <mainClass>com.rafay.fileengine.server.FileServer</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -157,6 +157,21 @@
       </plugin>
     </plugins>
   </build>
+    <profiles>
+      <!-- Optional: define profiles for server vs client -->
+      <profile>
+        <id>server</id>
+        <properties>
+          <exec.mainClass>com.rafay.fileengine.server.FileServer</exec.mainClass>
+        </properties>
+      </profile>
+      <profile>
+        <id>client</id>
+        <properties>
+          <exec.mainClass>com.rafay.fileengine.client.FileClient</exec.mainClass>
+        </properties>
+      </profile>
+    </profiles>
   <repositories>
     <repository>
       <id>central</id>

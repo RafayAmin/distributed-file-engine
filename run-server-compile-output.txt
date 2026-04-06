@@ -1,0 +1,7 @@
+[ERROR] Failed to execute goal org.xolstice.maven.plugins:protobuf-maven-plugin:0.6.1:compile-custom (default) on project distributed-file-engine: Unable to clean up temporary proto file directory: Directory D:\personal_projects\distributed-file-engine\target\protoc-dependencies\32be334c0cef901b102d9077385268b3\google\type unable to be deleted. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

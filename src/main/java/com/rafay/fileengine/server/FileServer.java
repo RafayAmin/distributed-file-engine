@@ -134,13 +134,16 @@ public class FileServer extends IndexServiceGrpc.IndexServiceImplBase {
     public static void main(String[] args) throws IOException, InterruptedException {
         FileServer server = new FileServer();
 
-        // Register a test client
-        String clientId = "C1";
+        // Get port from environment variable, default to 8080
+        int port = Integer.parseInt(System.getenv().getOrDefault("SERVER_PORT", "8080").trim());
+        
+        // Get test client ID from environment variable, default to "C1"
+        String clientId = System.getenv().getOrDefault("TEST_CLIENT_ID", "C1");
         String apiKey = server.clientManager.registerClient(clientId);
         System.out.println("Registered Client ID: " + clientId);
-        System.out.println("API Key: " + apiKey); // In real use, this would be sent securely to the client
+        System.out.println("API Key: " + apiKey);
+        System.out.println("Server listening on port: " + port);
 
-        int port = 8080;
         server.start(port);
         server.blockUntilShutdown();
     }

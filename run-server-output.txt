@@ -1,0 +1,39 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: windows
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 10.0
+[INFO] os.detected.version.major: 10
+[INFO] os.detected.version.minor: 0
+[INFO] os.detected.classifier: windows-x86_64
+[INFO] 
+[INFO] ------------< com.rafay.fileengine:distributed-file-engine >------------
+[INFO] Building distributed-file-engine 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.1.0:java (default-cli) @ distributed-file-engine ---
+[WARNING] 
+java.lang.Error: Unresolved compilation problem: 
+
+    at com.rafay.fileengine.server.FileServer.main (FileServer.java:134)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:279)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.276 s
+[INFO] Finished at: 2026-04-06T00:29:29-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.1.0:java (default-cli) on project distributed-file-engine: An exception occurred while executing the Java class. Unresolved compilation problem: 
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
