@@ -4,26 +4,46 @@ A scalable, distributed system for indexing and searching text files, built with
 
 ## Features
 
-- **gRPC Communication**: Uses Protocol Buffers for efficient, typed communication between client and server.
+-**gRPC Communication**: Efficient, type-safe RPC using Protocol Buffers.
+- **ZeroMQ Implementation**: Message-passing alternative using the ROUTER-DEALER pattern.
 - **Client-Side Computation**: Word counting is performed on the client to reduce server load and improve scalability.
 - **Global Index**: The server maintains a central index of word frequencies across all documents.
 - **Search Functionality**: Clients can search for keywords and retrieve a ranked list of matching documents.
+- **Client Authentication**: Secure communication with API key-based authentication.
+- **Automated Key Registration**: Clients automatically receive a unique API key from the server.
+- **Performance Comparison**: Benchmarking of gRPC vs. ZeroMQ performance.
 - **Maven Build**: Fully integrated with Maven for dependency management and compilation.
 
 ## Project Structure
 distributed-file-engine/
+distributed-file-engine/
+├── certs/ # Certificate Authority and TLS certificates (for future mTLS)
+│ ├── ca.crt
+│ ├── ca.key
+│ ├── server.crt
+│ ├── server.key
+│ ├── client.crt
+│ └── client.key
 ├── pom.xml # Maven configuration file
+├── README.md # This file
 ├── src/
 │ ├── main/
 │ │ ├── java/
 │ │ │ └── com/rafay/fileengine/
 │ │ │ ├── server/
-│ │ │ │ └── FileServer.java # gRPC server implementation
-│ │ │ └── client/
-│ │ │ └── FileClient.java # gRPC client implementation
-│ │ └── proto/
-│ │ └── file_engine.proto # gRPC service and message definitions
-└── README.md
+│ │ │ │ ├── FileServer.java # gRPC server implementation
+│ │ │ │ └── ZeroMQFileServer.java # ZeroMQ server implementation
+│ │ │ ├── client/
+│ │ │ │ ├── FileClient.java # gRPC client implementation
+│ │ │ │ └── ZeroMQFileClient.java # ZeroMQ client implementation
+│ │ │ └── auth/
+│ │ │ └── ClientManager.java # API key management
+│ │ ├── proto/
+│ │ │ └── file_engine.proto # gRPC service and message definitions
+│ │ └── resources/
+│ └── test/
+│ └── java/
+└── target/ # Compiled classes and generated code
 
 ## How to Build
 
