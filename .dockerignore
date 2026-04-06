@@ -1,0 +1,27 @@
+# Build artifacts (we copy the JAR explicitly in Dockerfile)
+#target/
+#*.jar
+
+# Version control
+.git/
+.gitignore
+
+# IDE & editor files
+.vscode/
+.idea/
+*.iml
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files (avoid recursive context)
+Dockerfile
+.dockerignore
+
+# Temp/test files
+*.txt
+server-env-test.txt
+build-package.txt
+test-compile.txt
