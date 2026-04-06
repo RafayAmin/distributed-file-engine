@@ -124,6 +124,15 @@
           <target>21</target>
         </configuration>
       </plugin>
+      <!-- Execute Java classes directly -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <mainClass>com.rafay.fileengine.server.FileServer</mainClass>
+        </configuration>
+      </plugin>
 
       <!-- Build Fat JAR (Optional later) -->
       <plugin>
