@@ -53,6 +53,9 @@ public class FileServer extends IndexServiceGrpc.IndexServiceImplBase {
         String providedApiKey = request.getApiKey(); // ← Get the API key from the request
 
         if (!clientManager.validateApiKey(clientId, providedApiKey)) {
+
+            System.out.println("authentication failed: invalid api key for client " + clientId);
+
             FileEngineProto.IndexReply reply = FileEngineProto.IndexReply.newBuilder()
                     .setStatus("ERROR")
                     .setMessage("Invalid API Key")
@@ -85,6 +88,8 @@ public class FileServer extends IndexServiceGrpc.IndexServiceImplBase {
 
         // Validate the API key
         if (!clientManager.validateApiKey(clientId, providedApiKey)) {
+
+            System.out.println("authentication failed: invalid api key for client " + clientId);
             // Create a SearchReply with an error status
             FileEngineProto.SearchReply errorReply = FileEngineProto.SearchReply.newBuilder()
                     .setErrorMessage("Invalid API Key") // Use a dedicated field for errors
@@ -117,6 +122,9 @@ public class FileServer extends IndexServiceGrpc.IndexServiceImplBase {
     @Override
     public void registerClient(FileEngineProto.RegisterRequest request, StreamObserver<FileEngineProto.RegisterReply> responseObserver) {
         String clientId = request.getClientId();
+
+        System.out.println("rate limit exceeded: registration spam detected for " + clientId);
+
         // Generate a new API key
         String apiKey = clientManager.registerClient(clientId);
 

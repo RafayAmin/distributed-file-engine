@@ -45,6 +45,7 @@ public class FileClient {
             this.apiKey = reply.getApiKey();
             System.out.println("Client registered. API Key: " + this.apiKey);
         } else {
+            System.out.println("ERROR: client registration failed - " + reply.getMessage());
             throw new RuntimeException("Failed to register: " + reply.getMessage());
         }
     }
@@ -59,6 +60,9 @@ public class FileClient {
                 .build();
 
         FileEngineProto.IndexReply reply = blockingStub.computeIndex(request);
+        if ("ERROR".equals(reply.getStatus())) {
+            System.out.println("ERROR: index request failed - " + reply.getMessage());
+        }
         System.out.println("Index Reply: " + reply.getStatus() + " - " + reply.getMessage());
     }
 
@@ -71,6 +75,9 @@ public class FileClient {
                 .build();
 
         FileEngineProto.SearchReply reply = blockingStub.computeSearch(request);
+        if (reply.getErrorMessage() != null && !reply.getErrorMessage().isEmpty()) {
+            System.out.println("ERROR: search request failed - " + reply.getErrorMessage());
+        }
         System.out.println("Search Results: " + reply.getResultsList());
     }
 
